@@ -3,212 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Valentine Surprise</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #FFB6C1, #FF69B4);
-            color: #DC143C;
-            overflow-x: hidden;
-            transition: all 0.5s ease;
-        }
-        .page {
-            display: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .page.active {
-            display: flex;
-        }
-        h1, h2 {
-            font-family: 'Dancing Script', cursive;
-            margin: 0;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            max-width: 600px;
-        }
-        button {
-            background: #FF69B4;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            margin: 10px;
-        }
-        button:hover {
-            background: #DC143C;
-            transform: scale(1.05);
-        }
-        .hearts {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .heart {
-            position: absolute;
-            font-size: 2em;
-            color: rgba(255, 105, 180, 0.7);
-            animation: float 6s infinite linear;
-        }
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .photo {
-            width: 200px;
-            height: 250px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .photo:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-        .photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #FF69B4;
-            animation: burst 2s ease-out forwards;
-        }
-        @keyframes burst {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-        }
-        #no-btn {
-            position: absolute;
-            transition: all 0.1s ease;
-        }
-        @media (max-width: 768px) {
-            .photo { width: 150px; height: 200px; }
-            p { font-size: 1em; }
-            button { padding: 12px 24px; }
-        }
-    </style>
+    <title>Happy Valentine's Day!</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="page1" class="page active">
-        <div class="hearts" id="hearts1"></div>
-        <h1>Hey ❤️</h1>
-        <p>I made something special just for you</p>
-        <button onclick="nextPage(2)">Begin 💌</button>
-    </div>
+    <!-- Header with heart icon for easter egg -->
+    <header>
+        <div id="heart-icon">💖</div>
+    </header>
 
-    <div id="page2" class="page">
-        <div class="hearts" id="hearts2"></div>
-        <h2>YOU 💕</h2>
-        <div class="gallery">
-            <div class="photo"><img src="photo1.jpg" ></div>
-            <div class="photo"><img src="photo2.jpg" ></div>
-            <div class="photo"><img src="photo3.jpg" ></div>
-            <!-- Add more <div class="photo"><img src="your-photo.jpg" alt="Description"></div> as needed -->
+    <!-- Landing Page Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Happy Valentine’s Day, My Bestest Human 💖</h1>
+            <p>You make life softer, brighter, and 100x better.</p>
+            <button id="surprise-btn">Click for a Surprise</button>
         </div>
-        <button onclick="nextPage(3)">Next 💕</button>
+        <!-- Floating hearts animation -->
+        <div class="floating-hearts">
+            <span>💖</span>
+            <span>💕</span>
+            <span>❤️</span>
+            <span>💖</span>
+            <span>💕</span>
+        </div>
+    </section>
+
+    <!-- Photo Memory Section -->
+    <section id="photos">
+        <h2>Our Precious Memories</h2>
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="images/photo1.jpeg" alt="Memory 1">
+                <p>Chotic side looks good on you 🫀</p>
+            </div>
+            <div class="photo-item">
+                <img src="images/photo2.jpeg" alt="Memory 2">
+                <p>The prettiest person alive 🫶🏻</p>
+            </div>
+            <div class="photo-item">
+                <img src="images/photo3.jpeg" alt="Memory 3">
+                <p>My fav person 4ever ❤️</p>
+            
+        </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section id="reasons">
+        <h2>Why You’re My Favorite Person</h2>
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <p>You listen without judging</p>
+            </div>
+            <div class="reason-card">
+                <p>You hype me up always</p>
+            </div>
+            <div class="reason-card">
+                <p>You understand my silence</p>
+            </div>
+            <div class="reason-card">
+                <p>You make ordinary days special</p>
+            </div>
+            <div class="reason-card">
+                <p>You’re my safe place</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sweet Message Section -->
+    <section id="message">
+        <h2>A Special Message</h2>
+        <div id="typing-text"></div>
+    </section>
+
+    <!-- Hidden Easter Egg Pop-up -->
+    <div id="easter-egg" class="hidden">
+        <div class="popup-content">
+            <p>You found the secret! 💌 You’re stuck with me forever 😌💖</p>
+            <button id="close-popup">Close</button>
+        </div>
     </div>
 
-    <div id="page3" class="page">
-        <div class="hearts" id="hearts3"></div>
-        <h2>A Message from My Heart 💖</h2>
-        <p>You mean more to me than words can explain. Beautiful, caring, and the sweetest person ever. You are a total favorite in my book! You are and always will be the LOVE OF MY LIFE.Noone can ever replace you. I will love you till my lat breath. Happy Valentine's Day!</p>
-        <!-- Edit the above <p> text to your heartfelt message -->
-        <button onclick="nextPage(4)">One question left 👀</button>
-    </div>
+    <!-- Background Music (hidden) -->
+    <audio id="bg-music" src="music/romantic.mp3" loop></audio>
 
-    <div id="page4" class="page">
-        <div class="hearts" id="hearts4"></div>
-        <h1>Will you be my Valentine? 💖</h1>
-        <button onclick="celebrate()">For sure 💕</button>
-        <button id="no-btn" onmouseover="moveNoBtn()" ontouchstart="moveNoBtn()">No 😶</button>
-    </div>
-
-    <div id="page5" class="page">
-        <div class="hearts" id="hearts5"></div>
-        <h1>Yay 💖 You just made my day</h1>
-        <p>Happy Valentine’s Day!</p>
-    </div>
-
-    <script>
-        let currentPage = 1;
-
-        function nextPage(page) {
-            document.getElementById(`page${currentPage}`).classList.remove('active');
-            currentPage = page;
-            document.getElementById(`page${currentPage}`).classList.add('active');
-            generateHearts(`hearts${currentPage}`);
-        }
-
-        function generateHearts(containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
-            for (let i = 0; i < 20; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.innerHTML = '❤️';
-                heart.style.left = Math.random() * 100 + '%';
-                heart.style.animationDelay = Math.random() * 6 + 's';
-                container.appendChild(heart);
-            }
-        }
-
-        function moveNoBtn() {
-            const btn = document.getElementById('no-btn');
-            const x = Math.random() * (window.innerWidth - 100);
-            const y = Math.random() * (window.innerHeight - 100);
-            btn.style.left = x + 'px';
-            btn.style.top = y + 'px';
-        }
-
-        function celebrate() {
-            nextPage(5);
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.animationDelay = Math.random() * 2 + 's';
-                document.body.appendChild(confetti);
-                setTimeout(() => confetti.remove(), 2000);
-            }
-        }
-
-        // Initialize hearts on load
-        generateHearts('hearts1');
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
